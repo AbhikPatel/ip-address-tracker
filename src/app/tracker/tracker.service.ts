@@ -7,8 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class TrackerService {
 
-  public api:string = 'https://geo.ipify.org/api/v2/country,city?apiKey=at_zfrxfx4UNJMoh8WH7oleawyQFUHMP&ipAddress=8.8.8.8';
-  public apiLatLoong = 'http://ipwho.is/'
+  // public api:string = 'https://geo.ipify.org/api/v2/country,city?apiKey=at_zfrxfx4UNJMoh8WH7oleawyQFUHMP&ipAddress=8.8.8.8';
+  // public apiLatLoong = 'http://ipwho.is/'
+
+  api:string = ''
+  apiLatLoong:string = ''
+
   constructor(
     private http:HttpClient
   ) { }

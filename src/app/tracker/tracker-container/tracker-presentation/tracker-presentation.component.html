@@ -1,13 +1,40 @@
-<div class="h-100 d-flex">
-    <form [formGroup]="mapGroup" (ngSubmit)="callAPI()">
-        <label for="location">ipaddress
-        </label>
-        <input type="text" formControlName="ip">
-        <button class="btn btn-success" type="submit">search</button>
-    </form>
-    <div class="map-container">
+<div class="h-100 d-flex flex-column">
+    <div class="title-container d-flex flex-column align-items-center position-relative">
+        <h1 class="text-white py-5"> IP Address Tracker </h1>
+        <form [formGroup]="mapGroup" (ngSubmit)="callAPI()">
+            <div class="input-group mb-3 rounded-5">
+                <input type="text" class="form-control fw-semibold" placeholder="Search for any IP address or domain" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+                <button class="btn btn-dark fw-bolder" type="submit" id="button-addon2">></button>
+            </div>
+        </form>
+        <div class="info-container d-flex justify-content-between p-5 bg-white shadow-lg rounded-4 position-absolute">
+            <div class="d-flex flex-column">
+                <span class="fw-bolder text-muted"> IP ADDRESS </span>
+                <span class="fs-2 fw-bolder"> 192.125.23.35 </span>
+            </div>
+            <span class="border-2 border-end"></span>
+            <div class="d-flex flex-column">
+                <span class="fw-bolder text-muted"> LOCATION </span>
+                <span class="fs-2 fw-bolder"> 192.125.23.35 </span>
+            </div>
+            <span class="border-2 border-end"></span>
+            <div class="d-flex flex-column">
+                <span class="fw-bolder text-muted"> TIME ZONE </span>
+                <span class="fs-2 fw-bolder"> 192.125.23.35 </span>
+            </div>
+            <span class="border-2 border-end"></span>
+            <div class="d-flex flex-column">
+                <span class="fw-bolder text-muted"> ISP </span>
+                <span class="fs-2 fw-bolder"> 192.125.23.35 </span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="map-container">
         <div class="map-frame">
           <div id="map"></div>
         </div>
-    </div>
+    </div> -->
+
+    <div id="map" class="flex-grow-1"></div>
 </div>
