@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -74,6 +75,9 @@
             "development": {
               "browserTarget": "ip-address-tracker:build:development"
             }
+          },
+          "options": {
+            "browserTarget": "move-safe:build"
           },
           "defaultConfiguration": "development"
         },

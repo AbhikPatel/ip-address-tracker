@@ -1,0 +1,7 @@
+{
+    "/": {
+        "target": "https://geo.ipify.org",
+        "secure": true,
+        "changeOrigin": true
+    }
+}

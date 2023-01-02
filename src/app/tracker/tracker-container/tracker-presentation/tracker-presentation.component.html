@@ -1,0 +1,13 @@
+<div class="h-100 d-flex">
+    <form [formGroup]="mapGroup" (ngSubmit)="callAPI()">
+        <label for="location">ipaddress
+        </label>
+        <input type="text" formControlName="ip">
+        <button class="btn btn-success" type="submit">search</button>
+    </form>
+    <div class="map-container">
+        <div class="map-frame">
+          <div id="map"></div>
+        </div>
+    </div>
+</div>
