@@ -45,6 +45,10 @@ form{
   width: 70%;
   bottom: -30%;
   z-index: 2;
+
+  @media (max-width: 768px){
+    bottom: -140%;
+  }
 }
 
 #map{

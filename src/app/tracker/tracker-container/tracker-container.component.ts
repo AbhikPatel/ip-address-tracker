@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TrackerService } from '../tracker.service';
 
 @Component({
@@ -7,15 +8,22 @@ import { TrackerService } from '../tracker.service';
 })
 export class TrackerContainerComponent implements OnInit {
 
+  public getLocation$: Observable<any>;
+  public getLatLog$: Observable<any>;
+
   constructor(
     private service: TrackerService
-  ) { }
+  ) {
+    this.getLocation$ = new Observable();
+    this.getLatLog$ = new Observable();
+  }
 
   ngOnInit(): void {
-    this.service.getMapLocation().subscribe((data) => {
-      if (data)
-        console.log(data)
-    })
+  }
+  
+  public emitIPAddress(value: any) {
+    this.getLatLog$ = this.service.getLatLong(value);
+    this.getLocation$ = this.service.getMapLocation(value);
   }
 
 }
