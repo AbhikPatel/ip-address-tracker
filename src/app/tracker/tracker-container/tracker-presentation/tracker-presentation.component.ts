@@ -49,6 +49,7 @@ export class TrackerPresentationComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this._service.ipAddress$.subscribe((data: any) => this.emitIPAddress.emit(data))
+    this.emitIPAddress.emit('123.201.81.210')
   }
 
   private initMap(): void {

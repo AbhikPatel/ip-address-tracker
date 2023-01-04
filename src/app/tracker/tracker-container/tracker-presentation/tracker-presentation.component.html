@@ -13,7 +13,8 @@
                 <div class="col-12 col-md-3">
                     <div class="d-flex flex-column border-2 border-end text-center text-md-start p-md-0 py-3">
                         <span class="fw-bolder text-muted"> IP ADDRESS </span>
-                        <span class="fs-2 fw-bolder text-truncate" *ngIf="Location"> hello </span>
+                        <span class="fs-2 fw-bolder text-truncate" *ngIf="Location"> 
+                            {{Location.ip}} </span>
                         <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
                     </div>
                 </div>
@@ -33,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
-                    <div class="d-flex flex-column border-2 border-end text-center text-md-start p-md-0 py-3">
+                    <div class="d-flex flex-column text-center text-md-start p-md-0 py-3">
                         <span class="fw-bolder text-muted"> ISP </span>
                         <span class="fs-2 fw-bolder text-truncate"> {{Location?.isp}} </span>
                         <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
