@@ -12,45 +12,38 @@ body {
   overflow: hidden;
 }
 
-// .map-container {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   margin: 30px;
-// }
-
-// .map-frame {
-//   border: 2px solid black;
-//   height: 100%;
-// }
-
-// #map {
-//   height: 100%;
-// }
-
-.title-container{
+.title-container {
   flex: 0 0 35%;
   background-image: url('~src/assets/images/pattern-bg.png');
   background-position: center;
   background-size: cover;
 }
 
-form{
+form {
   width: 600px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 }
 
-.info-container{
+.info-container {
   width: 70%;
   bottom: -30%;
   z-index: 2;
 
-  @media (max-width: 768px){
+  @media (max-width: 968px) {
     bottom: -140%;
   }
 }
 
-#map{
+#map {
   z-index: 1;
+}
+
+.ip-details{
+  border-right: 2px solid #e7e7e7;
+  @media (max-width: 968px) {
+    border: none;
+  }
 }

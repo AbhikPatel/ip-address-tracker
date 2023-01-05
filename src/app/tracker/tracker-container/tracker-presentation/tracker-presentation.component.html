@@ -10,34 +10,36 @@
         </form>
         <div class="info-container p-5 bg-white shadow-lg rounded-4 position-absolute">
             <div class="row overflow-hidden">
-                <div class="col-12 col-md-3">
-                    <div class="d-flex flex-column border-2 border-end text-center text-md-start p-md-0 py-3">
+                <div class="col-12 col-lg-3">
+                    <div class="ip-details d-flex flex-column text-center text-lg-start p-lg-0 py-3">
                         <span class="fw-bolder text-muted"> IP ADDRESS </span>
-                        <span class="fs-2 fw-bolder text-truncate" *ngIf="Location"> 
-                            {{Location.ip}} </span>
-                        <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
+                        <span class="fs-2 fw-bolder text-truncate" *ngIf="coordinates">
+                            {{coordinates.ip}} </span>
+                        <span class="fs-2 fw-bolder" *ngIf="!coordinates"> - </span>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    <div class="d-flex flex-column border-2 border-end text-center text-md-start p-md-0 py-3">
-                        <span class="fw-bolder text-muted"> LOCATION </span>
-                        <span class="fs-2 fw-bolder text-truncate" *ngIf="Location"> {{Location?.location?.city}}, {{Location?.location?.country}} <br>
-                            {{Location?.location?.postalCode}} </span>
-                        <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
+                <div class="col-12 col-lg-3">
+                    <div class="ip-details d-flex flex-column text-center text-lg-start p-lg-0 py-3">
+                        <span class="fw-bolder text-muted"> COORDINATES </span>
+                        <span class="fs-2 fw-bolder text-truncate" *ngIf="coordinates"> {{coordinates?.city}},
+                            {{coordinates?.country}}
+                            {{coordinates?.country_code}} </span>
+                        <span class="fs-2 fw-bolder" *ngIf="!coordinates"> - </span>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    <div class="d-flex flex-column border-2 border-end text-center text-md-start p-md-0 py-3">
+                <div class="col-12 col-lg-3">
+                    <div class="ip-details d-flex flex-column text-center text-lg-start p-lg-0 py-3">
                         <span class="fw-bolder text-muted"> TIME ZONE </span>
-                        <span class="fs-2 fw-bolder text-truncate" *ngIf="Location"> UTC {{Location?.location?.timezone}} </span>
-                        <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
+                        <span class="fs-2 fw-bolder text-truncate" *ngIf="coordinates"> UTC
+                            {{coordinates?.timezone.utc}} </span>
+                        <span class="fs-2 fw-bolder" *ngIf="!coordinates"> - </span>
                     </div>
                 </div>
-                <div class="col-12 col-md-3">
-                    <div class="d-flex flex-column text-center text-md-start p-md-0 py-3">
+                <div class="col-12 col-lg-3">
+                    <div class="d-flex flex-column text-center text-lg-start p-lg-0 py-3">
                         <span class="fw-bolder text-muted"> ISP </span>
-                        <span class="fs-2 fw-bolder text-truncate"> {{Location?.isp}} </span>
-                        <span class="fs-2 fw-bolder" *ngIf="!Location"> - </span>
+                        <span class="fs-2 fw-bolder text-truncate"> {{coordinates?.connection.isp}} </span>
+                        <span class="fs-2 fw-bolder" *ngIf="!coordinates"> - </span>
                     </div>
                 </div>
             </div>

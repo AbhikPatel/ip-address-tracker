@@ -11,16 +11,6 @@ import { TrackerPresenterService } from '../tracker-presenter/tracker-presenter.
 })
 export class TrackerPresentationComponent implements AfterViewInit, OnInit {
 
-
-  @Input() public set Location(v: any) {
-    if (v)
-      this._Location = v;      
-  }
-
-  public get Location(): any {
-    return this._Location;
-  }
-
   @Input() public set coordinates(v: any) {
     if (v)
       this._coordinates = v;
@@ -37,7 +27,6 @@ export class TrackerPresentationComponent implements AfterViewInit, OnInit {
   public mapGroup: FormGroup;
   public lat: number = 1;
   public lon: number = 1;
-  private _Location: any;
   private _coordinates: any;
 
   constructor(
@@ -73,17 +62,11 @@ export class TrackerPresentationComponent implements AfterViewInit, OnInit {
 
   public callAPI() {
     this._service.getData(this.mapGroup.value.ip)
-    // this._tracker.getLatLong(this.mapGroup.value.ip).subscribe(value => {
-    //   this.lat = value.latitude;
-    //   this.lon = value.longitude;
-    // })
     if (this.coordinates) {
       this.lat = this.coordinates.latitude;
       this.lon = this.coordinates.longitude;
       L.marker([this.lat, this.lon]).addTo(this.map);
       this.map.flyTo([this.lat, this.lon], 15);
-      // this.map.setView([this.lat, this.lon], 11);
-      // this.map.panTo([this.lat, this.lon]);
     }
   }
 }
