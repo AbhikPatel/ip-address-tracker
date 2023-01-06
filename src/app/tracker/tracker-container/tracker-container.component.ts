@@ -23,7 +23,7 @@ export class TrackerContainerComponent implements OnInit {
   
   public emitIPAddress(value: any) {
     this.getLatLog$ = this.service.getLatLong(value);
-    this.getLocation$ = this.service.getMapLocation();
+    this.getLocation$ = this.service.getMapLocation(value);
   }
 
 }

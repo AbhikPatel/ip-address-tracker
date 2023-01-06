@@ -11,6 +11,15 @@ import { TrackerPresenterService } from '../tracker-presenter/tracker-presenter.
 })
 export class TrackerPresentationComponent implements AfterViewInit, OnInit {
 
+  @Input() public set location(v: any) {
+    if (v)
+      this._location = v;
+  }
+
+  public get location(): any {
+    return this._location;
+  }
+
   @Input() public set coordinates(v: any) {
     if (v)
       this._coordinates = v;
@@ -28,6 +37,7 @@ export class TrackerPresentationComponent implements AfterViewInit, OnInit {
   public lat: number = 1;
   public lon: number = 1;
   private _coordinates: any;
+  private _location: any;
 
   constructor(
     private _service: TrackerPresenterService

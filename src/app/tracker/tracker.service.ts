@@ -13,8 +13,8 @@ export class TrackerService {
     private http:HttpClient
   ) { }
 
-  public getMapLocation():Observable<any>{
-    return this.http.get<any>(`${this.apiLatLoong}`)
+  public getMapLocation(ip:any):Observable<any>{
+    return this.http.get<any>(`${this.apiLatLoong}/${ip}`)
   }
 
   public getLatLong(ip: any): Observable<any>{

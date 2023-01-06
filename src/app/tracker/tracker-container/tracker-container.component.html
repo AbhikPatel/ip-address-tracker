@@ -1,4 +1,2 @@
-<app-tracker-presentation
-    [coordinates]="getLatLog$ | async"
-    (emitIPAddress)="emitIPAddress($event)"
-></app-tracker-presentation>
+<app-tracker-presentation [location]="getLocation$ |async" [coordinates]="getLatLog$ | async"
+    (emitIPAddress)="emitIPAddress($event)"></app-tracker-presentation>
